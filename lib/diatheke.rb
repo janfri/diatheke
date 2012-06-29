@@ -9,7 +9,8 @@ module Diatheke
     end
 
     def passage(mod, key)
-      call(mod, key)
+      s = call(mod, key)
+      parse_passage s
     end
 
     def search(mod, key, opts={})
@@ -18,13 +19,14 @@ module Diatheke
       case key
       when Regexp
         search_type = :regex
-        search_key = key.inspect.sub(%r(^/)).sub(%r(/$))
+        search_key = key.inspect.sub(%r(^/), '').sub(%r(/$), '')
       when Array
         search_type = :multiword
         search_key = key.join(' ')
       end
       opts[:search_type] = search_type
-      call(mod, search_key, opts)
+      s = call(mod, search_key, opts)
+      parse_search s
     end
 
     private
@@ -42,6 +44,26 @@ module Diatheke
       `#{cmd}`
     end
 
+    def parse_passage(s)
+      a = s.split(/\n+/)
+      a.pop
+      a.map do |v|
+        k, t = v.split(': ')
+        Verse.new k, t
+      end
+    end
+
+    def parse_search(s)
+      a = s.split(/\s*--\s*/)
+      if a.size == 3
+        return a[1].split(/\s*;\s*/)
+      else
+        return []
+      end
+    end
+
   end
+
+  Verse = Struct.new(:key, :text)
 
 end
