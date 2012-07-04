@@ -40,7 +40,6 @@ module Diatheke
         args << '-r' << r
       end
       cmd = "diatheke -b #{mod} #{args.map {|a| Shellwords.escape(a.to_s)}.join(' ')} -k #{key}"
-      puts cmd
       `#{cmd}`
     end
 

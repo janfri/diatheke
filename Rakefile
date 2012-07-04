@@ -1,5 +1,6 @@
 require 'rim'
 require 'rim/gem'
+require 'rim/test'
 
 Rim.setup do
   name 'diatheke'
