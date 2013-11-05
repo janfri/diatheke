@@ -29,4 +29,11 @@ class TestDiatheke < Test::Unit::TestCase
     assert_equal ['John 1:42'], res
   end
 
+  def test_correct_split
+    res = Diatheke.passage('KJV', 'Joh 1:39').first
+    assert_equal 'John 1:39', res.key
+    text = 'He saith unto them, Come and see. They came and saw where he dwelt, and abode with him that day: for it was about the tenth hour.'
+    assert_equal text, res.text
+  end
+
 end

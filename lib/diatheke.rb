@@ -47,7 +47,7 @@ module Diatheke
       a = s.split(/\n+/)
       a.pop
       a.map do |v|
-        k, t = v.split(': ')
+        k, t = v.split(': ', 2)
         Verse.new k, t
       end
     end
