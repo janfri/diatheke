@@ -1,3 +1,14 @@
+# -- encoding: utf-8 --
+#
+# Diatheke
+#
+# This library is a wrapper of the diatheke command-line client of the sword project.
+# http://www.crosswire.org/sword/index.jsp
+#
+# Copyright (C) 2012-2014 by Jan Friedrich <janfri26@gmail.com>
+# Licensed under the GNU LESSER GENERAL PUBLIC LICENSE,
+# Version 2.1, February 1999
+#
 require 'shellwords'
 
 module Diatheke

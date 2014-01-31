@@ -1,8 +1,11 @@
 require 'rim'
+require 'rim/check_version'
 require 'rim/gem'
 require 'rim/test'
 
 Rim.setup do
   name 'diatheke'
-  version '0.0.1'
+  authors 'Jan Friedrich'
+  email 'janfri26@gmail.com'
+  version '0.1.0'
 end
