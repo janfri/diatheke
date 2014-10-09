@@ -1,7 +1,5 @@
-require 'rim'
-require 'rim/check_version'
-require 'rim/gem'
-require 'rim/test'
+require 'rim/tire'
+require 'rim/version'
 
 Rim.setup do
   name 'diatheke'
