@@ -55,7 +55,7 @@ module Diatheke
     end
 
     def parse_passage(s)
-      a = s.split(/\n+/)
+      a = s.split(/\n\n+/)
       a.pop
       a.map do |v|
         k, t = v.split(': ', 2)
