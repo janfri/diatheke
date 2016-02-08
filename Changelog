@@ -1,3 +1,7 @@
+0.1.2
+Split passages at reference key to ensure correct handling of line breaks.
+
+
 0.1.1
 Handle line breaks in text correct.
 
