@@ -55,9 +55,10 @@ module Diatheke
     end
 
     def parse_passage(s)
-      a = s.split(/\n\n+/)
-      a.pop
+      a = s.split(/^(?=\w+ +\d+:\d+:)/)
+      a.last.sub!(/\(\w+\)$/, '')
       a.map do |v|
+        v.strip!
         k, t = v.split(': ', 2)
         Verse.new k, t
       end
