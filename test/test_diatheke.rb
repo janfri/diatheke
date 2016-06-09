@@ -25,8 +25,8 @@ class TestDiatheke < Test::Unit::TestCase
   end
 
   def test_search_regex
-    res = Diatheke.search('KJV', /Jesus.+Jesus/, :range => 'Joh 1')
-    assert_equal ['John 1:42'], res
+    res = Diatheke.search('KJV', /witness.+witness/, :range => 'Joh 1')
+    assert_equal ['John 1:7'], res
   end
 
   def test_correct_split_with_colon_in_text
