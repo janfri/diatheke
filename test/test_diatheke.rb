@@ -9,9 +9,12 @@ class TestDiatheke < Test::Unit::TestCase
   end
 
   def test_passage
-    res = Diatheke.passage('KJV', 'Joh 1:1-3')
+    res = Diatheke.passage('KJV', 'Joh 1:1-3', format: :plain)
     assert_equal ['John 1:1', 'John 1:2', 'John 1:3'], res.map {|e| e.key}
     assert_match /^In the beginning was the Word/, res.first.text
+    res = Diatheke.passage('KJV', 'Joh 1:1-3', format: :CGI)
+    assert_equal ['John 1:1', 'John 1:2', 'John 1:3'], res.map {|e| e.key}
+    assert_match %r(^<span >: In the beginning was the Word.+the Word was God.</span><br />$), res.first.text
   end
 
   def test_search_phrase

@@ -19,8 +19,8 @@ module Diatheke
       call('system', 'modulelistnames').split(/\n/)
     end
 
-    def passage(mod, key)
-      s = call(mod, key)
+    def passage(mod, key, **opts)
+      s = call(mod, key, opts)
       parse_passage s
     end
 
@@ -44,6 +44,9 @@ module Diatheke
 
     def call(mod, key, **opts)
       args = []
+      if f = opts[:format]
+        args << '-f' << f
+      end
       if s = opts[:search_type]
         args << '-s' << s
       end
