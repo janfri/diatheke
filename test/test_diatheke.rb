@@ -15,17 +15,17 @@ class TestDiatheke < Test::Unit::TestCase
   end
 
   def test_search_phrase
-    res = Diatheke.search('KJV', 'with God', :range => 'Joh 1')
+    res = Diatheke.search('KJV', 'with God', range: 'Joh 1')
     assert_equal ['John 1:1', 'John 1:2'], res
   end
 
   def test_search_multiword
-    res = Diatheke.search('KJV', %w(God Jesus), :range => 'Joh 1')
+    res = Diatheke.search('KJV', %w(God Jesus), range: 'Joh 1')
     assert_equal ['John 1:29', 'John 1:36'], res
   end
 
   def test_search_regex
-    res = Diatheke.search('KJV', /witness.+witness/, :range => 'Joh 1')
+    res = Diatheke.search('KJV', /witness.+witness/, range: 'Joh 1')
     assert_equal ['John 1:7'], res
   end
 

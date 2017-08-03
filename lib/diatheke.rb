@@ -24,7 +24,7 @@ module Diatheke
       parse_passage s
     end
 
-    def search(mod, key, opts={})
+    def search(mod, key, **opts)
       search_type = :phrase
       search_key = key
       case key
@@ -42,7 +42,7 @@ module Diatheke
 
     private
 
-    def call(mod, key, opts={})
+    def call(mod, key, **opts)
       args = []
       if s = opts[:search_type]
         args << '-s' << s

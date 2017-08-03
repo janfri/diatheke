@@ -19,13 +19,13 @@ This library is a wrapper of the
     puts Diatheke.passage('KJV', 'John 1').to_yaml
 
     # Search a phrase
-    p Diatheke.search('KJV', 'with God', :range => 'Joh 1')
+    p Diatheke.search('KJV', 'with God', range:  'Joh 1')
 
     # Search with method "multi word"
-    p Diatheke.search('KJV', %w(God Jesus), :range => 'Joh 1')
+    p Diatheke.search('KJV', %w(God Jesus), range:  'Joh 1')
 
     # Search with regular expression
-    p Diatheke.search('KJV', /Jesus.+Jesus/, :range => 'Joh 1')
+    p Diatheke.search('KJV', /Jesus.+Jesus/, range:  'Joh 1')
 
 ## Author
 
