@@ -30,7 +30,7 @@ module Diatheke
       case key
       when Regexp
         search_type = :regex
-        search_key = key.inspect.sub(%r(^/), '').sub(%r(/$), '')
+        search_key = key.source
       when Array
         search_type = :multiword
         search_key = key.join(' ')
