@@ -1,3 +1,6 @@
+0.2.0
+Support output format option.
+
 0.1.2
 Split passages at reference key to ensure correct handling of line breaks.
 
