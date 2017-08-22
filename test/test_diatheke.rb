@@ -11,10 +11,10 @@ class TestDiatheke < Test::Unit::TestCase
   def test_passage
     res = Diatheke.passage('KJV', 'Joh 1:1-3', format: :plain)
     assert_equal ['John 1:1', 'John 1:2', 'John 1:3'], res.map {|e| e.key}
-    assert_match /^In the beginning was the Word/, res.first.text
+    assert_match %r(^In the beginning was the Word), res.first.text
     res = Diatheke.passage('KJV', 'Joh 1:1-3', format: :CGI)
     assert_equal ['John 1:1', 'John 1:2', 'John 1:3'], res.map {|e| e.key}
-    assert_match %r(^<span >: In the beginning was the Word.+the Word was God.</span><br />$), res.first.text
+    assert_match %r(^<span.*In the beginning was the Word.+the Word was God.</span><br */>$), res.first.text
   end
 
   def test_search_phrase
@@ -33,7 +33,7 @@ class TestDiatheke < Test::Unit::TestCase
   end
 
   def test_correct_split_with_colon_in_text
-    res = Diatheke.passage('KJV', 'Joh 1:39').first
+    res = Diatheke.passage('KJV', 'Joh 1:39', format: :plain).first
     assert_equal 'John 1:39', res.key
     text = 'He saith unto them, Come and see. They came and saw where he dwelt, and abode with him that day: for it was about the tenth hour.'
     assert_equal text, res.text
