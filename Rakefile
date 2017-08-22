@@ -5,6 +5,6 @@ Rim.setup do
   name 'diatheke'
   authors 'Jan Friedrich'
   email 'janfri26@gmail.com'
-  version '0.2.0'
+  version '0.2.1'
   summary 'This library is a wrapper of the diatheke command-line client of the sword project.'
 end

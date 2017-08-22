@@ -1,3 +1,6 @@
+0.2.1
+Make tests work with different versions of KJV bible text.
+
 0.2.0
 Support output format option.
 
