@@ -1,4 +1,5 @@
-# -- encoding: utf-8 --
+# encoding: utf-8
+
 #
 # Diatheke
 #
@@ -12,6 +13,8 @@
 require 'shellwords'
 
 module Diatheke
+
+  VERSION = '0.2.2'
 
   class << self
 
