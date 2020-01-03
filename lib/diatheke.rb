@@ -20,7 +20,7 @@ module Diatheke
     end
 
     def passage(mod, key, **opts)
-      s = call(mod, key, opts)
+      s = call(mod, key, **opts)
       parse_passage s
     end
 
@@ -36,7 +36,7 @@ module Diatheke
         search_key = key.join(' ')
       end
       opts[:search_type] = search_type
-      s = call(mod, search_key, opts)
+      s = call(mod, search_key, **opts)
       parse_search s
     end
 
