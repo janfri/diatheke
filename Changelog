@@ -1,3 +1,6 @@
+0.2.2
+Make keyword arguments Ruby 3.0 ready.
+
 0.2.1
 Make tests work with different versions of KJV bible text.
 
